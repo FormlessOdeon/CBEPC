@@ -5,7 +5,7 @@ It will accomplish this by making a pull from ebay for the last 5 sold items, av
 excel file. THe ebay pull will be performed in the Ebay API. The looping is done in python with the aid of the pandas lib. THe purpose of 
 using pandas over simpler methods is the expandability offered by the pandas dataframe. 
 
-As of 4/12/2017 the main functionality of this app is non-functioning.
+As of 4/12/2017 the app is just missing the ebay API calls to become funtional.
 
 -FormlessOdeon
 
