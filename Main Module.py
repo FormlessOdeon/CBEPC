@@ -1,6 +1,8 @@
 import xlrd
 import pandas as pd
 import numpy as np
+import ebaysdk
+from ebaysdk.finding import Connection as finding
 
 ###The first version of my Ebay COmic Price Finder .10
 
@@ -14,6 +16,9 @@ TCount = -1
 IList = []
 TList = []
 TNI = []
+api = finding(siteid='EBAY-GB', appid='SamuelCo-AmazingR-PRD-145e91339-4cda585a', config_file=None)
+
+
 
 #Create list of titles
 for TitleCell in TitleColumn:
@@ -33,14 +38,21 @@ for T in TList:
     for I in IList[TCount]:
         TNI.append(T + I)
 
+for Elm in TNI:
+    api.execute('findcompleteditems', {'keywords': Elm, 'categoryid': ['1', '63'],"paginationInput": {'entriesPerPage': '25','pageNumber': '1'},'sortOrder': 'CurrentPriceHighest'})
 
+dictstr = api.response_dict()
 
+for item in dictstr['searchResult']['item']:
+    print("ItemID: %s" % item['itemId'].value)
+    print("Title: %s" % item['title'].value)
+    print("CategoryID: %s" % item['primaryCategory']['categoryId'].value)
 
 
 
 #print(TList)
 #print(IList)
-print(TNI)
+#print(TNI)
 #print(PanComicList)
 
 
