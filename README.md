@@ -7,6 +7,8 @@ using pandas over simpler methods is the expandability offered by the pandas dat
 
 As of 4/12/2017 the app is just missing the ebay API calls to become funtional.
 
+This app uses the Python Ebay SDK. The link to that is https://github.com/timotheus/ebaysdk-python
+
 -FormlessOdeon
 
 
