@@ -16,7 +16,7 @@ TCount = -1
 IList = []
 TList = []
 TNI = []
-api = finding(siteid='EBAY-GB', appid='SamuelCo-AmazingR-PRD-145e91339-4cda585a', config_file=None)
+api = finding(siteid='EBAY-GB', appid='????', config_file=None)
 
 
 
